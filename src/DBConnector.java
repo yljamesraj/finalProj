@@ -3,7 +3,7 @@ import com.vz.letustry.*;
 public class DBConnector {
 	// JDBC driver name and database URL
 	   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-	   static final String DB_URL = "jdbc:mysql://localhost/letustry";
+	   static final String DB_URL = "jdbc:mysql://113.128.163.236:3306/letustry";
 
 	   //  Database credentials
 	   static final String USER = "root";
@@ -70,5 +70,10 @@ public class DBConnector {
 		   System.out.println("Goodbye!");
 		   return usrDtls;
 		  }
+	public static void main(String args[])
+	{
+		DBConnector db= new DBConnector();
+		db.getUserDetails("Jyothi", "verizon1");
+	}
 
 }

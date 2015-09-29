@@ -26,10 +26,10 @@ function clearForm()
 	
 	}	
 </script>
-<title>Login</title>
+<title>User Food Selection</title>
 </head>
 <body>
-	<form id="loginfrm" method="post" action="">
+	<form id="userSelectionfrm" method="post" action="">
 
 		<center>
 			<br> <br>
