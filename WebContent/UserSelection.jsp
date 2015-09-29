@@ -35,26 +35,23 @@ function clearForm()
 			<br> <br>
 			<div style="margin: 10px 0;">
 				<div class="easyui-panel" title="Login" style="width: 300px">
-					<div style="padding: 10px 0px 10px 60px">
-						<table>
-							<tr>
-								<td>VZID</td>
-								<td><input class="easyui-validatebox" type="text"
-									name="vzid" id="vzid" data-options="required:true"></input></td>
-							</tr>
-							<tr>
-								<td>Password</td>
-								<td><input class="easyui-validatebox" type="password"
-									name="password" id="password" data-options="required:true"></input></td>
-							</tr>
-						</table>
-					</div>
-				</div>
-				<div style="text-align: center; padding: 8px">
-					<a href="javascript:void(0)" class=easyui-linkbutton
-						" onclick="submitForm()"> Login</a> <a href="javascript:void(0)"
-						class=easyui-linkbutton " onclick="clearForm()"> Reset</a>
-				</div>
+				<h2> Today's Menu</h2>
+				<h6> Vendor1</h6>
+				<input type="Radio" name="Vendor1" value="" checked="checked" class="easyui-validatebox" required="true">
+				<input type="Radio" name="Vendor1" value="" checked="checked" class="easyui-validatebox" required="true">
+				<input type="Radio" name="Vendor1" value="" checked="checked" class="easyui-validatebox" required="true">
+				
+				<h6> Vendor2</h6>
+				<input type="Radio" name="Vendor2" value="" checked="checked" class="easyui-validatebox" required="true">
+				<input type="Radio" name="Vendor2" value="" checked="checked" class="easyui-validatebox" required="true">
+				<input type="Radio" name="Vendor2" value="" checked="checked" class="easyui-validatebox" required="true">
+				
+			
+		
+				
+				
+				
+			</div>
 		</center>
 		</table>
 
