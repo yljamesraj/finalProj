@@ -1,5 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="com.vz.letustry.*"%>
+<%@ page import="java.util.*"%>
+
+<%@ page import="java.text.SimpleDateFormat"%>
+
+<%
+	VendorSelectionDAO obj = new VendorSelectionDAO();
+	String currDate = new SimpleDateFormat("yyyy-MM-dd")
+			.format(new Date());
+	List vs1 = obj.getVendorMenuDetails(currDate, 1);
+	List vs2 = obj.getVendorMenuDetails(currDate, 2);
+
+	String radio1 = "";
+	for (int i = 0; i < vs1.size(); i++) {
+		VendorSelectionBean vsb = new VendorSelectionBean();
+		vsb = (VendorSelectionBean) vs1.get(i);
+		radio1 += "<input type=\"Radio\" name=\"1\" value=\""
+				+ vsb.getMenuid()
+				+ "\"  class=\"easyui-validatebox\" required=\"true\">   "
+				+ vsb.getItemname()+ "    ("+vsb.getDescription()+")<br>" ;
+		System.out.println(vsb.getMenuid());
+		System.out.println(vsb.getItemname());
+		System.out.println(vsb.getDescription());
+	}
+
+	String radio2 = "";
+	for (int i = 0; i < vs2.size(); i++) {
+		VendorSelectionBean vsb = new VendorSelectionBean();
+		vsb = (VendorSelectionBean) vs2.get(i);
+		radio2 += "<input type=\"Radio\" name=\"2\" value=\""
+				+ vsb.getMenuid()
+				+ "\"  class=\"easyui-validatebox\" required=\"true\">   "
+				+ vsb.getItemname()+ "    ("+vsb.getDescription()+")<br>";
+		System.out.println(vsb.getMenuid());
+		System.out.println(vsb.getItemname());
+		System.out.println(vsb.getDescription());
+	}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,50 +46,106 @@
 <link rel="stylesheet" type="text/css" href="thirdParty/css/easyui.css">
 <link rel="stylesheet" type="text/css" href="thirdParty/css/icon.css">
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-<script type="text/javascript" src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
-<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/icon.css">
-<link rel="stylesheet" type="text/css" href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script type="text/javascript"
+	src="http://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="http://www.jeasyui.com/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css"
+	href="http://www.jeasyui.com/easyui/themes/default/easyui.css">
 <script type="text/javascript">
-function submitForm()
-{
-	var vzid= document.getElementById("vzid").value;
-	var pwd= document.getElementById("password").value;
-	window.location.replace("LoginCheck.jsp?vzid?vzid="+vzid+"&pwd="+pwd);
-	
+	function submitForm() {
+		$('#userSelectionfrm').form('submit', {
+			    url:'SaveUserSelection.jsp',
+			    onSubmit: function(){
+			     return $(this).form('validate');
+			    },
+			    success:function(data){
+			        alert("Your option is saved...Thank you.")
+			   }
+			});
+
 	}
-function clearForm()
-{
-	$('#loginfrm').form('clear');
-	
-	}	
+	function clearForm() {
+		$('#userSelectionfrm').form('clear');
+		  $('input[name="1"]').attr('disabled', false);
+		  $('input[name="2"]').attr('disabled', false);
+
+	}
+	 $(document).ready(function () {
+
+	$('input:radio[name=1]').click(function() {
+		  var val = $(this).val(); 
+		  var menuSel=document.getElementById('menuIdSelected');
+		  menuSel.value=val;
+		 
+		  $('input[name="2"]').attr('disabled', 'disabled');
+
+		});
+	   });
+	 $(document).ready(function () {
+
+		 
+		
+		 
+			$('input:radio[name=2]').click(function() {
+				//  var val = $('input:radio[name=theme]:checked').val();
+				    var val = $(this).val(); 
+				  var menuSel=document.getElementById('menuIdSelected');
+				  menuSel.value=val;
+				  $('input[name="1"]').attr('disabled', 'disabled');
+				});
+			   });
 </script>
 <title>User Food Selection</title>
 </head>
-<body>
-	<form id="userSelectionfrm" method="post" action="">
 
+<body onload="getTodayMenu()">
+	<form id="userSelectionfrm" method="post" action="">
+<input type ="text" value="" id="menuIdSelected" name="menuIdSelected"/>
 		<center>
 			<br> <br>
 			<div style="margin: 10px 0;">
-				<div class="easyui-panel" title="Login" style="width: 300px">
-				<h2> Today's Menu</h2>
-				<h6> Vendor1</h6>
-				<input type="Radio" name="Vendor1" value="" checked="checked" class="easyui-validatebox" required="true">
-				<input type="Radio" name="Vendor1" value="" checked="checked" class="easyui-validatebox" required="true">
-				<input type="Radio" name="Vendor1" value="" checked="checked" class="easyui-validatebox" required="true">
+				<div class="easyui-panel" title="Today's Menu" style="width: 500px">
+				<div style="padding: 10px 0px 10px 60px">
+					<h2>Vendor 1</h2>
+					<%=radio1 %>
+						<h2>Vendor 2</h2>
+						<%=radio2 %>
+						
+					<% 	System.out.println(radio1);
+							System.out.println(radio2);%>
+							<br>
+							<br><br>
+							Please give your rating for yesterday snacks:<br>
+							<input type="Radio" name="Rating" value="1"  class="easyui-validatebox" required="true">  5
+							<input type="Radio" name="Rating" value="1"  class="easyui-validatebox" required="true">  4 
+	
+	<input type="Radio" name="Rating" value="1"  class="easyui-validatebox" required="true">  3 
+	
+	<input type="Radio" name="Rating" value="1"  class="easyui-validatebox" required="true">  2
+	
+	<input type="Radio" name="Rating" value="1"  class="easyui-validatebox" required="true">  1
+	<br><br>Comments: <br>
+	 <textarea cols="30" rows="5" id="message" name="message"></textarea>
+	 <br><br><br>
+		</div>						
+				<div style="text-align: center; padding: 8px">
+					<a href="javascript:void(0)" class=easyui-linkbutton
+						" onclick="submitForm()"> Submit</a> <a href="javascript:void(0)"
+						class=easyui-linkbutton " onclick="clearForm()"> Reset</a>
+				</div>
+					<%
+					String msg = request.getParameter("msg");
+					if(msg!=null)
+					{
+					%>
+					<label><font color="blue"><%=msg %></font></label>
+					<%} %>
+
+				</div>
 				
-				<h6> Vendor2</h6>
-				<input type="Radio" name="Vendor2" value="" checked="checked" class="easyui-validatebox" required="true">
-				<input type="Radio" name="Vendor2" value="" checked="checked" class="easyui-validatebox" required="true">
-				<input type="Radio" name="Vendor2" value="" checked="checked" class="easyui-validatebox" required="true">
-				
-			
-		
-				
-				
-				
-			</div>
 		</center>
 		</table>
 

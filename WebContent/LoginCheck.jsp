@@ -18,26 +18,36 @@
 		UserDtlsBean user = new UserDtlsBean();
 		user = userDao.getUserDetails(vzid, pwd);
 		if (user != null) {
-			if (pwd.equals(user.getPassword())) {
+			System.out.println("pwd"+pwd);
+			System.out.println("dbpwd "+user.getPassword());
+			if (!(pwd.equals(user.getPassword()))) {
 				System.out.println("Incorrect password");
-				request.getRequestDispatcher("Home.jsp").forward(request,
-						response);
+				request.getRequestDispatcher(
+						"Login.jsp?loginMsg=Invalid UserName or Password")
+						.forward(request, response);
 			} else {
 				System.out.println("Correct password");
+				System.out.println("pwd"+pwd);
+				System.out.println("dbpwd "+user.getPassword());
+				
 				user.getPassword();
 				user.getRole();
 				String userId = user.getUserid();
 				String VzId = user.getVzid();
 				session.setAttribute("userId", userId);
+				System.out.println("------------------------------------USERID"+userId);
 				session.setAttribute("vzId", VzId);
-				request.getRequestDispatcher(
-						"Home.jsp?msg=Invalid UserName or Password")
-						.forward(request, response);
+				if(user.getRole().equals("emp"))
+				request.getRequestDispatcher("UserSelection.jsp").forward(
+						request, response);
+				if(user.getRole().equals("adm"))
+					request.getRequestDispatcher("Report.jsp").forward(
+							request, response);
 
 			}
 
 		} else {
-			request.getRequestDispatcher("Login.jsp?msg=User Doesnt exist")
+			request.getRequestDispatcher("Login.jsp?loginMsg=User Doesnt exist")
 					.forward(request, response);
 		}
 	%>

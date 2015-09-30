@@ -17,7 +17,7 @@ function submitForm()
 {
 	var vzid= document.getElementById("vzid").value;
 	var pwd= document.getElementById("password").value;
-	window.location.replace("LoginCheck.jsp?vzid?vzid="+vzid+"&pwd="+pwd);
+	window.location.replace("LoginCheck.jsp?vzid="+vzid+"&pwd="+pwd);
 	
 	}
 function clearForm()
@@ -50,11 +50,18 @@ function clearForm()
 						</table>
 					</div>
 				</div>
-				<div style="text-align: center; padding: 8px">
+				<div class="easyui-panel" style="text-align: center; padding: 8px;width: 300px">
 					<a href="javascript:void(0)" class=easyui-linkbutton
 						" onclick="submitForm()"> Login</a> <a href="javascript:void(0)"
 						class=easyui-linkbutton " onclick="clearForm()"> Reset</a>
 				</div>
+				<%
+					String msg = request.getParameter("loginMsg");
+					if(msg!=null)
+					{
+					%>
+					<label><font color="blue"><%=msg %></font></label>
+					<%} %>
 		</center>
 		</table>
 
