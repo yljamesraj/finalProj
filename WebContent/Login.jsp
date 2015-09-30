@@ -38,7 +38,7 @@ function clearForm()
 					<div style="padding: 10px 0px 10px 60px">
 						<table>
 							<tr>
-								<td>VZID</td>
+								<td>User Name</td>
 								<td><input class="easyui-validatebox" type="text"
 									name="vzid" id="vzid" data-options="required:true"></input></td>
 							</tr>
