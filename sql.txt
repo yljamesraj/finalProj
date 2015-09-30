@@ -1,0 +1,242 @@
+CREATE TABLE users (userid INT NOT NULL AUTO_INCREMENT, username VARCHAR(20) NOT NULL, password VARCHAR(20) NOT NULL, role VARCHAR(20), primary key(userid)); 
+CREATE TABLE vendor(vendorid INT NOT NULL AUTO_INCREMENT, vendorname VARCHAR(50) NOT NULL, contactno VARCHAR(20) NOT NULL, location VARCHAR(20), primary key(vendorid)); 
+ CREATE TABLE menu(menuid INT NOT NULL AUTO_INCREMENT, itemname VARCHAR(50) NOT NULL, description VARCHAR(100), status VARCHAR(10), start_date DATE,end_date DATE,primary key(menuid)); 
+ CREATE TABLE vendorselection(vendorid INT, date DATE,menuid INT,  FOREIGN KEY (vendorid)  REFERENCES vendor(vendorid),FOREIGN KEY (menuid)  REFERENCES menu(menuid)); 
+CREATE TABLE empselection(empid VARCHAR(20), date DATE,menuid INT,  rating INT, comments VARCHAR(200), FOREIGN KEY (menuid)  REFERENCES menu(menuid)); 
+ insert into users ( username, password, role) values ( 'James', 'verizon1','emp'); 
+ insert into users ( username, password, role) values ( 'Jeeva', 'verizon1','vdr'); 
+ insert into users ( username, password, role) values ( 'Jyothi', 'verizon1','adm'); 
+
+
+
+  51 cd .\finalProj
+  52 git status
+  53 git add .
+  54 git commit -m "changes login"
+  55 git push -u origin master
+
+git init
+git remote add origin https://github.com/yljamesraj/test.git
+git push -u origin master
+=================================================================
+PS C:\Users\Administrator\Downloads\mysql-5.6.26-winx64\mysql-5.6.26-winx64> cd .\bin
+PS C:\Users\Administrator\Downloads\mysql-5.6.26-winx64\mysql-5.6.26-winx64\bin> .\mysql.exe -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1
+Server version: 5.6.26 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE letustry;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE letustry;
+Database changed
+mysql> CREATE TABLE users (userid INT NOT NULL AUTO_INCREMENT, username VARCHAR(20) NOT NULL, password VARCHAR(20) NOT N
+ULL, role VARCHAR(20), primary key(userid));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> CREATE TABLE vendor(vendorid INT NOT NULL AUTO_INCREMENT, vendorname VARCHAR(50) NOT NULL, contactno VARCHAR(20)
+NOT NULL, location VARCHAR(20), primary key(vendorid));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql>  CREATE TABLE menu(menuid INT NOT NULL AUTO_INCREMENT, itemname VARCHAR(50) NOT NULL, description VARCHAR(100), s
+tatus VARCHAR(10), start_date DATE,end_date DATE,primary key(menuid));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql>  CREATE TABLE vendorselection(vendorid INT, date DATE,menuid INT,  FOREIGN KEY (vendorid)  REFERENCES vendor(vend
+orid),FOREIGN KEY (menuid)  REFERENCES menu(menuid));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> CREATE TABLE empselection(empid VARCHAR(20), date DATE,menuid INT,  rating INT, comments VARCHAR(200), FOREIGN KE
+Y (menuid)  REFERENCES menu(menuid));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql>  insert into users ( username, password, role) values ( 'James', 'verizon1','emp');
+Query OK, 1 row affected (0.02 sec)
+
+mysql>  insert into users ( username, password, role) values ( 'Jeeva', 'verizon1','vdr');
+insert into users ( username, password, role) values ( 'Jeeva', 'verizon1','vdr');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>  insert into users ( username, password, role) values ( 'Jyothi', 'verizon1','adm');
+Query OK, 1 row affected (0.00 sec)
+=====================================================
+
+insert into vendor(vendorname , contactno, location) values('Saravana' ,9084976733,"RMZ");
+insert into vendor(vendorname , contactno, location) values('Kannan' ,9084976733,"RMZ");
+
+insert into menu (itemname ,description ,status,start_date,end_date )values ("Pizza","one small size pizza" , "2","2015-9-29","2015-9-29");
+insert into menu (itemname ,description ,status,start_date,end_date )values ("Sandwich","2 cheese sandwich" , "2","2015-9-29","2015-9-29");
+insert into menu (itemname ,description ,status,start_date,end_date )values ("French fries","cripsy french fries" , "2","2015-9-29","2015-9-29");
+insert into menu (itemname ,description ,status,start_date,end_date )values ("Choco lava cake","filled with choco" , "2","2015-9-29","2015-9-29");
+insert into menu (itemname ,description ,status,start_date,end_date )values ("Pongal","20gm of pongal" , "2","2015-9-19","2015-9-19");
+insert into menu (itemname ,description ,status,start_date,end_date )values ("Burger","veg burger filled with panner patty" , "2","2015-9-29","2015-9-29");
+insert into menu (itemname ,description ,status,start_date,end_date )values ("Dosai","2 Dosai" , "2","2015-9-29","2015-9-29");
+insert into menu (itemname ,description ,status,start_date,end_date )values ("Samosa","4 small size samosa" , "2","2015-9-29","2015-9-29");
+insert into menu (itemname ,description ,status,start_date,end_date )values ("Sprouts","20 gms of sprouts" , "2","2015-9-29","2015-9-29");
+insert into menu (itemname ,description ,status,start_date,end_date )values ("Butter Corn ","30 gms" , "2","2015-9-19","2015-9-19");
+
+mysql> select * from menu;
++--------+-----------------+-------------------------------------+--------+------------+------------+
+| menuid | itemname        | description                         | status | start_date | end_date   |
++--------+-----------------+-------------------------------------+--------+------------+------------+
+|      9 | Pizza           | one small size pizza                | 2      | 2015-09-29 | 2015-09-29 |
+|     10 | Sandwich        | 2 cheese sandwich                   | 2      | 2015-09-29 | 2015-09-29 |
+|     11 | French fries    | cripsy french fries                 | 2      | 2015-09-29 | 2015-09-29 |
+|     12 | Choco lava cake | filled with choco                   | 2      | 2015-09-29 | 2015-09-29 |
+|     13 | Pongal          | 20gm of pongal                      | 2      | 2015-09-19 | 2015-09-19 |
+|     14 | Burger          | veg burger filled with panner patty | 2      | 2015-09-29 | 2015-09-29 |
+|     15 | Dosai           | 2 Dosai                             | 2      | 2015-09-29 | 2015-09-29 |
+|     16 | Samosa          | 4 small size samosa                 | 2      | 2015-09-29 | 2015-09-29 |
+|     17 | Sprouts         | 20 gms of sprouts                   | 2      | 2015-09-29 | 2015-09-29 |
+|     18 | Butter Corn     | 30 gms                              | 2      | 2015-09-19 | 2015-09-19 |
++--------+-----------------+-------------------------------------+--------+------------+------------+
+10 rows in set (0.00 sec)
+
+
+insert into empselection(empid,date ,menuid,rating ,comments ) values (1,"2015-9-29" ,1,1,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (2,"2015-9-29" ,2,2,"Bad");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (3,"2015-9-29" ,3,3,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (1,"2015-9-9" ,4,2,"Worst");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (2,"2015-9-9" ,5,3,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (3,"2015-9-9" ,6,1,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (1,"2015-9-19" ,7,2,"Good");
+
+
+insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-9-29" ,9);
+insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-9-29" ,10);
+insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-9-29" ,11);
+insert into vendorselection (vendorid, date ,menuid ) values (2,"2015-9-29" ,12);
+insert into vendorselection (vendorid, date ,menuid ) values (2,"2015-9-29" ,13);
+insert into vendorselection (vendorid, date ,menuid ) values (2,"2015-9-29" ,14);
+
+insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-9-30" ,15);
+insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-9-30" ,16);
+insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-9-30" ,17);
+insert into vendorselection (vendorid, date ,menuid ) values (2,"2015-9-30" ,18);
+insert into vendorselection (vendorid, date ,menuid ) values (2,"2015-9-30" ,19);
+insert into vendorselection (vendorid, date ,menuid ) values (2,"2015-9-30" ,20);
+
+insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-10-1" ,10);
+insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-10-1" ,11);
+insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-10-1" ,12);
+insert into vendorselection (vendorid, date ,menuid ) values (2,"2015-10-1" ,15);
+insert into vendorselection (vendorid, date ,menuid ) values (2,"2015-10-1" ,16);
+insert into vendorselection (vendorid, date ,menuid ) values (2,"2015-10-1" ,17);
+
+insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-10-2" ,15);
+insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-10-2" ,16);
+insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-10-2" ,17);
+insert into vendorselection (vendorid, date ,menuid ) values (2,"2015-10-2" ,18);
+insert into vendorselection (vendorid, date ,menuid ) values (2,"2015-10-2" ,10);
+insert into vendorselection (vendorid, date ,menuid ) values (2,"2015-10-2" ,11);
+
+
+mysql> select * from vendorselection;
++----------+------------+--------+
+| vendorid | date       | menuid |
++----------+------------+--------+
+|        1 | 2015-09-29 |      9 |
+|        1 | 2015-09-29 |     10 |
+|        1 | 2015-09-29 |     11 |
+|        2 | 2015-09-29 |     12 |
+|        2 | 2015-09-29 |     13 |
+|        2 | 2015-09-29 |     14 |
+|        1 | 2015-09-30 |     15 |
+|        1 | 2015-09-30 |     16 |
+|        1 | 2015-09-30 |     17 |
+|        2 | 2015-09-30 |     18 |
+|        1 | 2015-10-01 |     10 |
+|        1 | 2015-10-01 |     11 |
+|        1 | 2015-10-01 |     12 |
+|        2 | 2015-10-01 |     15 |
+|        2 | 2015-10-01 |     16 |
+|        2 | 2015-10-01 |     17 |
+|        1 | 2015-10-02 |     15 |
+|        1 | 2015-10-02 |     16 |
+|        1 | 2015-10-02 |     17 |
+|        2 | 2015-10-02 |     18 |
+|        2 | 2015-10-02 |     10 |
+|        2 | 2015-10-02 |     11 |
++----------+------------+--------+
+====================================================================================================
+
+insert into users ( username, password, role) values ( 'James', '123','emp');
+insert into users ( username, password, role) values ( 'Jyothi', '123','emp');
+insert into users ( username, password, role) values ( 'Jeeva', '123','emp');
+insert into users ( username, password, role) values ( 'Kavitha', '123','emp');
+insert into users ( username, password, role) values ( 'Joe', '123','emp');
+insert into users ( username, password, role) values ( 'Vicky', '123','emp');
+insert into users ( username, password, role) values ( 'John', '123','emp');
+insert into users ( username, password, role) values ( 'Clament', '123','emp');
+insert into users ( username, password, role) values ( 'Jayanthi', '123','emp');
+insert into users ( username, password, role) values ( 'Krishna', '123','emp');
+insert into users ( username, password, role) values ( 'Juvi', '123','emp');
+insert into users ( username, password, role) values ( 'Ilaqya', '123','emp');
+insert into users ( username, password, role) values ( 'Balaji', '123','emp');
+insert into users ( username, password, role) values ( 'Sanjay', '123','emp');
+insert into users ( username, password, role) values ( 'Meena', '123','emp');
+insert into users ( username, password, role) values ( 'Poorni', '123','emp');
+insert into users ( username, password, role) values ( 'Dharani', '123','emp');
+insert into users ( username, password, role) values ( 'Preethi', '123','emp');
+insert into users ( username, password, role) values ( 'Suvi', '123','emp');
+insert into users ( username, password, role) values ( 'Lakshmi', '123','emp');
+insert into users ( username, password, role) values ( 'Sekhar', '123','emp');
+insert into users ( username, password, role) values ( 'Chandra', '123','emp');
+insert into users ( username, password, role) values ( 'Harika', '123','emp');
+insert into users ( username, password, role) values ( 'Sumathi', '123','emp');
+insert into users ( username, password, role) values ( 'Admin', 'admin','adm');
+
+
+mysql> select * from users;
++--------+----------+----------+------+
+| userid | username | password | role |
++--------+----------+----------+------+
+|      4 | James    | 123      | emp  |
+|      5 | Jyothi   | 123      | emp  |
+|      6 | Jeeva    | 123      | emp  |
+|      7 | Kavitha  | 123      | emp  |
+|      8 | Joe      | 123      | emp  |
+|      9 | Vicky    | 123      | emp  |
+|     10 | John     | 123      | emp  |
+|     11 | Clament  | 123      | emp  |
+|     12 | Jayanthi | 123      | emp  |
+|     13 | Krishna  | 123      | emp  |
+|     14 | Juvi     | 123      | emp  |
+|     15 | Ilaqya   | 123      | emp  |
+|     16 | Balaji   | 123      | emp  |
+|     17 | Sanjay   | 123      | emp  |
+|     18 | Meena    | 123      | emp  |
+|     19 | Poorni   | 123      | emp  |
+|     20 | Dharani  | 123      | emp  |
+|     21 | Preethi  | 123      | emp  |
+|     22 | Suvi     | 123      | emp  |
+|     23 | Lakshmi  | 123      | emp  |
+|     24 | Sekhar   | 123      | emp  |
+|     25 | Chandra  | 123      | emp  |
+|     26 | Harika   | 123      | emp  |
+|     27 | Sumathi  | 123      | emp  |
+|     28 | Admin    | admin    | adm  |
++--------+----------+----------+------+
+25 rows in set (0.00 sec)
+
+
+===========================================================================================
+
+mysql> select m.menuid ,m.itemname,m.description from menu m ,vendorselection v where v.date="2015-9-29" and v.vendorid="1" and v.menuid = m.menuid;
+
+select m.menuid ,m.itemname,m.description from menu m ,vendorselection v where v.date="2015-9-29" and v.vendorid="1" and v.menuid = m.menuid;
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+
