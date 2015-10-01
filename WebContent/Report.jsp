@@ -30,8 +30,32 @@
 </script>
 </head>
 <body>
+
+	<table bgcolor="#EoECFF" width="100%">
+		<tr height="69">
+			<td><center>
+					<font size="500px" color="#6251A6">VZ SNACKS </font>
+				</center></td>
+		</tr>
+	</table>
 	<br>
-	<br>
+	<font color="#6251A6" font-weight=" bold">
+		<table bgcolor="#EOECFF" width="100%">
+			<tr height="2">
+				<tr>
+<td style="width:200px"></td>
+<td><a href="AdminHome.jsp">Home</a></td>
+<td>Welcome <%=(String) session.getAttribute("vzId")%></td>
+<td><a href="logout.jsp">Logout</a></td>
+			</tr>
+
+
+
+</table>
+
+	
+<br>
+				<br>
 	<%
 		String currDate = new SimpleDateFormat("yyyy-MM-dd")
 				.format(new Date());
@@ -40,7 +64,7 @@
 		<div class="easyui-panel" title="Login" style="width: 600px">
 			<div style="padding: 10px 0px 10px 60px">
 				DATE : <input id="dd" name="dd" class="easyui-datebox"
-					data-options="onSelect:onSelect" required="required"> <br>
+								data-options="onSelect:onSelect" required="required"> <br>
 				<br>
 
 
@@ -128,5 +152,6 @@
 			</div>
 		</div>
 	</center>
-</body>
+
+			</body>
 </html>

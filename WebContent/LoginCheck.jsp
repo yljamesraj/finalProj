@@ -37,11 +37,12 @@
 				session.setAttribute("userId", userId);
 				System.out.println("------------------------------------USERID"+userId);
 				session.setAttribute("vzId", VzId);
+				session.setAttribute("role", user.getRole());
 				if(user.getRole().equals("emp"))
 				request.getRequestDispatcher("UserSelection.jsp").forward(
 						request, response);
 				if(user.getRole().equals("adm"))
-					request.getRequestDispatcher("Report.jsp").forward(
+					request.getRequestDispatcher("AdminHome.jsp").forward(
 							request, response);
 
 			}

@@ -28,6 +28,10 @@ function clearForm()
 </script>
 <title>Login</title>
 </head>
+<table bgcolor ="#EoECFF"  width="100%">
+<tr height="69">
+<td><center><font size="500px" color="#6251A6">VZ SNACKS </font></center></td></tr></table>
+<br>
 <body>
 	<form id="loginfrm" method="post" action="">
 

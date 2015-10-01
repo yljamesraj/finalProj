@@ -83,6 +83,8 @@ insert into menu (itemname ,description ,status,start_date,end_date )values ("Do
 insert into menu (itemname ,description ,status,start_date,end_date )values ("Samosa","4 small size samosa" , "2","2015-9-29","2015-9-29");
 insert into menu (itemname ,description ,status,start_date,end_date )values ("Sprouts","20 gms of sprouts" , "2","2015-9-29","2015-9-29");
 insert into menu (itemname ,description ,status,start_date,end_date )values ("Butter Corn ","30 gms" , "2","2015-9-19","2015-9-19");
+insert into menu (itemname ,description ,status,start_date,end_date )values ("Bonda","20 gms of sprouts" , "2","2015-9-29","2015-9-29");
+insert into menu (itemname ,description ,status,start_date,end_date )values ("Vadai ","30 gms" , "2","2015-9-19","2015-9-19");
 
 mysql> select * from menu;
 +--------+-----------------+-------------------------------------+--------+------------+------------+
@@ -102,14 +104,65 @@ mysql> select * from menu;
 10 rows in set (0.00 sec)
 
 
-insert into empselection(empid,date ,menuid,rating ,comments ) values (1,"2015-9-29" ,1,1,"Good");
-insert into empselection(empid,date ,menuid,rating ,comments ) values (2,"2015-9-29" ,2,2,"Bad");
-insert into empselection(empid,date ,menuid,rating ,comments ) values (3,"2015-9-29" ,3,3,"Good");
-insert into empselection(empid,date ,menuid,rating ,comments ) values (1,"2015-9-9" ,4,2,"Worst");
-insert into empselection(empid,date ,menuid,rating ,comments ) values (2,"2015-9-9" ,5,3,"Good");
-insert into empselection(empid,date ,menuid,rating ,comments ) values (3,"2015-9-9" ,6,1,"Good");
-insert into empselection(empid,date ,menuid,rating ,comments ) values (1,"2015-9-19" ,7,2,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (4,"2015-9-29" ,9,1,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (5,"2015-9-29" ,9,2,"Bad");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (6,"2015-9-29" ,9,3,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (7,"2015-9-29" ,9,2,"Worst");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (8,"2015-9-29" ,9,3,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (9,"2015-9-29" ,9,1,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (10,"2015-9-29" ,9,2,"Good");
 
+
+insert into empselection(empid,date ,menuid,rating ,comments ) values (11,"2015-9-29" ,9,1,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (12,"2015-9-29" ,9,2,"Bad");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (13,"2015-9-29" ,9,3,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (14,"2015-9-29" ,9,2,"Worst");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (15,"2015-9-29" ,9,3,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (16,"2015-9-29" ,10,1,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (17,"2015-9-29" ,10,2,"Good");
+
+insert into empselection(empid,date ,menuid,rating ,comments ) values (18,"2015-9-29" ,10,1,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (19,"2015-9-29" ,10,2,"Bad");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (20,"2015-9-29" ,10,3,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (21,"2015-9-29" ,11,2,"Worst");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (22,"2015-9-29" ,12,3,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (23,"2015-9-29" ,12,1,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (24,"2015-9-29" ,12,2,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (25,"2015-9-29" ,12,2,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (26,"2015-9-29" ,13,2,"Good");
+insert into empselection(empid,date ,menuid,rating ,comments ) values (27,"2015-9-29" ,14,2,"Good");
+
+
+mysql> select * from empselection;
++-------+------------+--------+--------+----------+
+| empid | date       | menuid | rating | comments |
++-------+------------+--------+--------+----------+
+| 4     | 2015-09-29 |      9 |      1 | Good     |
+| 5     | 2015-09-29 |      9 |      2 | Bad      |
+| 6     | 2015-09-29 |      9 |      3 | Good     |
+| 7     | 2015-09-29 |      9 |      2 | Worst    |
+| 8     | 2015-09-29 |      9 |      3 | Good     |
+| 9     | 2015-09-29 |      9 |      1 | Good     |
+| 10    | 2015-09-29 |      9 |      2 | Good     |
+| 11    | 2015-09-29 |      9 |      1 | Good     |
+| 12    | 2015-09-29 |      9 |      2 | Bad      |
+| 13    | 2015-09-29 |      9 |      3 | Good     |
+| 14    | 2015-09-29 |      9 |      2 | Worst    |
+| 15    | 2015-09-29 |      9 |      3 | Good     |
+| 16    | 2015-09-29 |     10 |      1 | Good     |
+| 17    | 2015-09-29 |     10 |      2 | Good     |
+| 18    | 2015-09-29 |     10 |      1 | Good     |
+| 19    | 2015-09-29 |     10 |      2 | Bad      |
+| 20    | 2015-09-29 |     10 |      3 | Good     |
+| 21    | 2015-09-29 |     11 |      2 | Worst    |
+| 22    | 2015-09-29 |     12 |      3 | Good     |
+| 23    | 2015-09-29 |     12 |      1 | Good     |
+| 24    | 2015-09-29 |     12 |      2 | Good     |
+| 25    | 2015-09-29 |     12 |      2 | Good     |
+| 26    | 2015-09-29 |     13 |      2 | Good     |
+| 27    | 2015-09-29 |     14 |      2 | Good     |
++-------+------------+--------+--------+----------+
+24 rows in set (0.00 sec)
 
 insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-9-29" ,9);
 insert into vendorselection (vendorid, date ,menuid ) values (1,"2015-9-29" ,10);
@@ -239,4 +292,354 @@ mysql> commit;
 Query OK, 0 rows affected (0.00 sec)
 
 mysql>
+
+
+<input class="easyui-datebox" data-options="onSelect:onSelect"></input>
+17.    <div style="margin:10px 0">
+18.        <span>Selected Date: </span>
+19.        <span id="result"></span>
+20.    </div>
+21.    <script>
+22.        function onSelect(date){
+23.            $('#result').text(date)
+24.        }
+25.    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -94,7 +94,27 @@
 </script>
 <title>User Food Selection</title>
 </head>
+<table bgcolor="#EoECFF" width="100%">
+		<tr height="69">
+			<td><center>
+					<font size="500px" color="#6251A6">VZ SNACKS </font>
+				</center></td>
+		</tr>
+	</table>
+	<br>
+	<font color="#6251A6" font-weight=" bold">
+		<table bgcolor="#EOECFF" width="100%">
+			<tr height="2">
+				<tr>
+<td style="width:200px"></td>
+<td><a href="AdminHome.jsp">Home</a></td>
+<td>Welcome <%=(String) session.getAttribute("vzId")%></td>
+<td><a href="logout.jsp">Logout</a></td>
+			</tr>
 
+
+
+</table>
 <body onload="getTodayMenu()">
 	<form id="VendorSelectionfrm" method="post" action="">
 		<input type="hidden" id="itemsSelected" name="itemsSelected">
@@ -105,13 +125,17 @@
 			<div style="margin: 10px 0;">
 				<div class="easyui-panel" title="Select Menu" style="width: 650px">
 					<div style="padding: 10px 0px 10px 60px">
-						DATE : <input id="dd" name="dd" class="easyui-datebox"
+						<b>DATE : </b><input id="dd" name="dd" class="easyui-datebox"
 							data-options="onSelect:onSelect" required="required"> <br>
-						<br> <input type="Radio" name="Vendor" value="1"
+						<br> 
+						
+						<br>
+						<b>Select Vendor</b><br><br>
+						<font size="3px"></font><input type="Radio" name="Vendor" value="1"
 							class="easyui-validatebox" required="true"> Vendor 1 <input
 							type="Radio" name="Vendor" value="2"
-							class="easyui-validatebox" required="true"> Vendor 2
-
+							class="easyui-validatebox" required="true"> Vendor 2 </font>
+<br><br>
 						<table style='width: 470px;'>
 							<tr>
 								<td style='width: 260px;'><b>Available menu Items:</b><br />
