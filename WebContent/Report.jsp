@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Report</title>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript"
@@ -61,7 +61,7 @@
 				.format(new Date());
 	%>
 	<center>
-		<div class="easyui-panel" title="Login" style="width: 600px">
+		<div class="easyui-panel" title="Report" style="width: 600px">
 			<div style="padding: 10px 0px 10px 60px">
 				DATE : <input id="dd" name="dd" class="easyui-datebox"
 								data-options="onSelect:onSelect" required="required"> <br>

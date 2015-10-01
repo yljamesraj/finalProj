@@ -26,14 +26,14 @@
 		
 		boolean isAdded = userDao.addUserSelectionDetails(userID, menuID);
 		if (isAdded) {
-			request.getRequestDispatcher("UserSelection.jsp?msg=Successfully added")
+			request.getRequestDispatcher("Success.jsp")
 			.forward(request, response);
-			System.out.println("SUCCESS");
+			//System.out.println("SUCCESS1111");
 
 		} else {
-			request.getRequestDispatcher("UserSelection.jsp?msg=Failed to update your choice")
+			request.getRequestDispatcher("Failure.jsp")
 					.forward(request, response);
-			System.out.println("FAILED");
+			//System.out.println("FAILED");
 		}
 	%>
 

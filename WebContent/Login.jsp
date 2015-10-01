@@ -36,7 +36,12 @@ function clearForm()
 	<form id="loginfrm" method="post" action="">
 
 		<center>
-			<br> <br>
+			<br> <br><br>
+	<br>
+	<br>
+	<br>
+	<br>
+
 			<div style="margin: 10px 0;">
 				<div class="easyui-panel" title="Login" style="width: 300px">
 					<div style="padding: 10px 0px 10px 60px">
@@ -64,7 +69,7 @@ function clearForm()
 					if(msg!=null)
 					{
 					%>
-					<label><font color="blue"><%=msg %></font></label>
+					<label><font color="red"><%=msg %></font></label>
 					<%} %>
 		</center>
 		</table>

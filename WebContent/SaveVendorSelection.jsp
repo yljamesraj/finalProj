@@ -35,14 +35,17 @@
 		
 		boolean isAdded = vendorDao.addVendorSelectionDetails(userID, date1, itemsSelected);
 		if (isAdded) {
-			request.getRequestDispatcher("UserSelection.jsp?msg=Successfully added")
-			.forward(request, response);
 			System.out.println("SUCCESS");
+			response.sendRedirect("Success.jsp");
+			request.getRequestDispatcher("Success.jsp")
+			.forward(request, response);
+			//
 
 		} else {
-			request.getRequestDispatcher("UserSelection.jsp?msg=Failed to update your choice")
-					.forward(request, response);
 			System.out.println("FAILED");
+			request.getRequestDispatcher("Failure.jsp")
+					.forward(request, response);
+			//
 		}
 	%>
 

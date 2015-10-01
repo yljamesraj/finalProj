@@ -65,6 +65,7 @@
 			},
 			success : function(data) {
 				alert("Your option is saved...Thank you.")
+				//url : 'Success.jsp',
 			}
 		});
 
@@ -128,63 +129,56 @@
 				<td><a href="logout.jsp">Logout</a></td>
 			</tr>
 
-</table>
-</font>
+		</table>
+	</font>
+	
 
-			<form id="userSelectionfrm" method="post" action="">
-				<input type="hidden" value="" id="menuIdSelected"
-					name="menuIdSelected" />
-				<center>
-					<br> <br>
-					<div style="margin: 10px 0;">
-						<div class="easyui-panel" title="Today's Menu"
-							style="width: 500px">
-							<div style="padding: 10px 0px 10px 60px">
-								<h2>Vendor 1</h2>
-								<%=radio1%>
-								<h2>Vendor 2</h2>
-								<%=radio2%>
+	<form id="userSelectionfrm" method="post" action="">
+		<input type="hidden" value="" id="menuIdSelected"
+			name="menuIdSelected" />
+		<center>
+			<br>
+	
+			<div style="margin: 10px 0;">
+				<div class="easyui-panel" title="Today's Menu" style="width: 500px">
+					<div style="padding: 10px 0px 10px 60px">
+						<h2>Vendor 1</h2>
+						<%=radio1%>
+						<h2>Vendor 2</h2>
+						<%=radio2%>
 
-								<%
+						<%
 									System.out.println(radio1);
 									System.out.println(radio2);
 								%>
-								<br> <br>
-								<br> Please give your rating for yesterday snacks:<br>
-								<input type="Radio" name="Rating" value="1"
-									class="easyui-validatebox" required="true"> 5 <input
-									type="Radio" name="Rating" value="1" class="easyui-validatebox"
-									required="true"> 4 <input type="Radio" name="Rating"
-									value="1" class="easyui-validatebox" required="true"> 3
-
-								<input type="Radio" name="Rating" value="1"
-									class="easyui-validatebox" required="true"> 2 <input
-									type="Radio" name="Rating" value="1" class="easyui-validatebox"
-									required="true"> 1 <br>
-								<br>Comments: <br>
-								<textarea cols="30" rows="5" id="message" name="message"></textarea>
-								<br>
-								<br>
-								<br>
-							</div>
-							<div style="text-align: center; padding: 8px">
-								<a href="javascript:void(0)" class=easyui-linkbutton
-									" onclick="submitForm()"> Submit</a> <a
-									href="javascript:void(0)" class=easyui-linkbutton
-									" onclick="clearForm()"> Reset</a>
-							</div>
-							<%
+						<br> <br> <br> Please give your rating for
+						yesterday snacks:<br> <input type="Radio" name="Rating"
+							value="1" class="easyui-validatebox" required="true"> 5 <input
+							type="Radio" name="Rating" value="1" class="easyui-validatebox"
+							required="true"> 4 <input type="Radio" name="Rating"
+							value="1" class="easyui-validatebox" required="true"> 3 <input
+							type="Radio" name="Rating" value="1" class="easyui-validatebox"
+							required="true"> 2 <input type="Radio" name="Rating"
+							value="1" class="easyui-validatebox" required="true"> 1 <br>
+						<br>Comments: <br>
+						<textarea cols="30" rows="5" id="message" name="message"></textarea>
+						<br> <br> <br>
+					</div>
+					<div style="text-align: center; padding: 8px">
+						<a href="javascript:void(0)" class=easyui-linkbutton
+							" onclick="submitForm()"> Submit</a> <a href="javascript:void(0)"
+							class=easyui-linkbutton " onclick="clearForm()"> Reset</a>
+					</div>
+					<%
 								String msg = request.getParameter("msg");
 								if (msg != null) {
 							%>
-							<label><font color="blue"><%=msg %></font></label>
-							<%} %>
+					<label><font color="blue"><%=msg %></font></label>
+					<%} %>
 
-						</div>
-				</center>
-		</table>
-
+				</div>
 		</center>
-		</form>
+		
+	</form>
 </body>
 </html>
