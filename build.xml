@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="finalProj">
+    <property environment="env"/>
+    <property name="JAVA_HOME" value="../../../../Program Files/Java/jdk1.7.0_71"/>
+    <property name="JRE_HOME" value="../../../../Program Files/Java/jre1.8.0_25"/>
+    <property name="ECLIPSE_HOME" value="D:/Software/eclipse/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath">
+        <pathelement location="../../lib/annotations-api.jar"/>
+        <pathelement location="../../lib/catalina-ant.jar"/>
+        <pathelement location="../../lib/catalina-ha.jar"/>
+        <pathelement location="../../lib/catalina-tribes.jar"/>
+        <pathelement location="../../lib/catalina.jar"/>
+        <pathelement location="../../lib/ecj-4.2.2.jar"/>
+        <pathelement location="../../lib/el-api.jar"/>
+        <pathelement location="../../lib/jasper-el.jar"/>
+        <pathelement location="../../lib/jasper.jar"/>
+        <pathelement location="../../lib/jsp-api.jar"/>
+        <pathelement location="../../lib/servlet-api.jar"/>
+        <pathelement location="../../lib/tomcat-api.jar"/>
+        <pathelement location="../../lib/tomcat-coyote.jar"/>
+        <pathelement location="../../lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../lib/tomcat-i18n-es.jar"/>
+        <pathelement location="../../lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="../../lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="../../lib/tomcat-jdbc.jar"/>
+        <pathelement location="../../lib/tomcat-util.jar"/>
+        <pathelement location="../../lib/tomcat7-websocket.jar"/>
+        <pathelement location="../../lib/websocket-api.jar"/>
+    </path>
+    <path id="Maven Dependencies.libraryclasspath"/>
+    <path id="finalProj.classpath">
+        <pathelement location="target/classes"/>
+        <pathelement location="${JAVA_HOME}"/>
+        <pathelement location="${JRE_HOME}"/>
+        <path refid="Apache Tomcat v7.0 [Apache Tomcat v7.0].libraryclasspath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/classes"/>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="finalProj.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>
