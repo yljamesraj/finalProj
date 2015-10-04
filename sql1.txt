@@ -1,0 +1,538 @@
+ sql = "CREATE TABLE users (userid INT NOT NULL AUTO_INCREMENT, username VARCHAR(20) NOT NULL, password VARCHAR(20) NOT NULL, role VARCHAR(20), primary key(userid))""; 
+ sql = "CREATE TABLE vendor(vendorid INT NOT NULL AUTO_INCREMENT, vendorname VARCHAR(50) NOT NULL, contactno VARCHAR(20) NOT NULL, location VARCHAR(20), primary key(vendorid))""; 
+  sql = "CREATE TABLE menu(menuid INT NOT NULL AUTO_INCREMENT, itemname VARCHAR(50) NOT NULL, description VARCHAR(100), status VARCHAR(10), start_date DATE,end_date DATE,primary key(menuid))""; 
+  sql = "CREATE TABLE vendorselection(vendorid INT, date DATE,menuid INT,  FOREIGN KEY (vendorid)  REFERENCES vendor(vendorid),FOREIGN KEY (menuid)  REFERENCES menu(menuid))""; 
+ sql = "CREATE TABLE empselection(empid VARCHAR(20), date DATE,menuid INT,  rating INT, comments VARCHAR(200), FOREIGN KEY (menuid)  REFERENCES menu(menuid))""; 
+  sql= "insert into users ( username, password, role) values ( 'James', 'verizon1','emp')""; 
+  sql= "insert into users ( username, password, role) values ( 'Jeeva', 'verizon1','vdr')""; 
+  sql= "insert into users ( username, password, role) values ( 'Jyothi', 'verizon1','adm')""; 
+
+ sql= "insert into users ( username, password, role) values ( ' sql= "insert', 'verizon1','ins')""; 
+
+
+  51 cd .\finalProj
+  52 git status
+  53 git add .
+  54 git commit -m "changes login"
+  55 git push -u origin master
+
+git init
+git remote add origin https://github.com/yljamesraj/test.git
+git push -u origin master
+=================================================================
+PS C:\Users\Administrator\Downloads\mysql-5.6.26-winx64\mysql-5.6.26-winx64> cd .\bin
+PS C:\Users\Administrator\Downloads\mysql-5.6.26-winx64\mysql-5.6.26-winx64\bin> .\mysql.exe -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ""; or \g.
+Your MySQL connection id is 1
+Server version: 5.6.26 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help"";' or '\h' for help. Type '\c' to clear the current input statement.
+
+
+
+
+ String sql = "CREATE DATABASE letustry";
+ sql= "USE letustry";
+ sql = "CREATE TABLE users (userid INT NOT NULL AUTO_INCREMENT, username VARCHAR(20) NOT NULL, password VARCHAR(20) NOT NULL, role VARCHAR(20), primary key(userid))";
+ sql = "CREATE TABLE vendor(vendorid INT NOT NULL AUTO_INCREMENT, vendorname VARCHAR(50) NOT NULL, contactno VARCHAR(20) NOT NULL, location VARCHAR(20), primary key(vendorid))";
+ sql = "CREATE TABLE menu(menuid INT NOT NULL AUTO_INCREMENT, itemname VARCHAR(50) NOT NULL, description VARCHAR(100), status VARCHAR(10), start_date DATE,end_date DATE,primary key (menuid))"; sql = "CREATE TABLE vendorselection(vendorid INT, date DATE,menuid INT,  FOREIGN KEY (vendorid)  REFERENCES vendor(vendorid),FOREIGN KEY (menuid)  REFERENCES menu(menuid))";
+ sql = "CREATE TABLE empselection(empid VARCHAR(20), date DATE,menuid INT,  rating INT, comments VARCHAR(200), FOREIGN KEY (menuid)  REFERENCES menu(menuid))";
+
+
+ sql= "insert into users ( username, password, role) values ( 'James', 'verizon1','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Jeeva', 'verizon1','vdr')";
+ sql= "insert into users ( username, password, role) values ( 'Jyothi', 'verizon1','adm')";
+
+ sql= "insert into vendor(vendorname , contactno, location) values('Saravana' ,9084976733,'RMZ')";
+ sql= "insert into vendor(vendorname , contactno, location) values('Kannan' ,9084976733,'RMZ')";
+
+
+		       sql= "insert into menu (itemname ,description ,status,start_date,end_date )values ('Pizza','one small size pizza' , '2','2015-9-29','2015-9-29')";
+		       sql= "insert into menu (itemname ,description ,status,start_date,end_date )values ('Sandwich','2 cheese sandwich' , '2','2015-9-29','2015-9-29')";
+		       sql= "insert into menu (itemname ,description ,status,start_date,end_date )values ('French fries','cripsy french fries' , '2','2015-9-29','2015-9-29')";
+		       sql= "insert into menu (itemname ,description ,status,start_date,end_date )values ('Choco lava cake','filled with choco' , '2','2015-9-29','2015-9-29')";
+		       sql= "insert into menu (itemname ,description ,status,start_date,end_date )values ('Pongal','20gm of pongal' , '2','2015-9-19','2015-9-19')";
+		       sql= "insert into menu (itemname ,description ,status,start_date,end_date )values ('Burger','veg burger filled with panner patty' , '2','2015-9-29','2015-9-29')";
+		       sql= "insert into menu (itemname ,description ,status,start_date,end_date )values ('Dosai','2 Dosai' , '2','2015-9-29','2015-9-29')";
+		       sql= "insert into menu (itemname ,description ,status,start_date,end_date )values ('Samosa','4 small size samosa' , '2','2015-9-29','2015-9-29')";
+		       sql= "insert into menu (itemname ,description ,status,start_date,end_date )values ('Sprouts','20 gms of sprouts' , '2','2015-9-29','2015-9-29')";
+		       sql= "insert into menu (itemname ,description ,status,start_date,end_date )values ('Butter Corn','30 gms' , '2','2015-9-19','2015-9-19')";
+		       sql= "insert into menu (itemname ,description ,status,start_date,end_date )values ('Bonda','20 gms of sprouts' , '2','2015-9-29','2015-9-29')";
+		       sql= "insert into menu (itemname ,description ,status,start_date,end_date )values ('Vadai','30 gms' , '2','2015-9-19','2015-9-19')";
+
+
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (4,'2015-9-29' ,9,1,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (5,'2015-9-29' ,9,2,'Bad')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (6,'2015-9-29' ,9,3,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (7,'2015-9-29' ,9,2,'Worst')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (8,'2015-9-29' ,9,3,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (9,'2015-9-29' ,9,1,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (10,'2015-9-29' ,9,2,'Good')";
+
+
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (11,'2015-9-29' ,9,1,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (12,'2015-9-29' ,9,2,'Bad')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (13,'2015-9-29' ,9,3,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (14,'2015-9-29' ,9,2,'Worst')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (15,'2015-9-29' ,9,3,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (16,'2015-9-29' ,10,1,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (17,'2015-9-29' ,10,2,'Good')";
+
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (18,'2015-9-29' ,9,1,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (19,'2015-9-29' ,1,2,'Bad')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (20,'2015-9-29' ,2,3,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (21,'2015-9-29' ,3,2,'Worst')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (22,'2015-9-29' ,4,3,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (23,'2015-9-29' ,5,1,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (24,'2015-9-29' ,3,2,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (25,'2015-9-29' ,4,2,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (26,'2015-9-29' ,5,2,'Good')";
+ sql= "insert into empselection(empid,date ,menuid,rating ,comments ) values (27,'2015-9-29' ,1,2,'Good')";
+
+
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-9-29' ,9)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-9-29' ,1)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-9-29' ,2)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-9-29' ,3)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-9-29' ,4)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-9-29' ,5)";
+
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-9-30' ,6)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-9-30' ,7)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-9-30' ,8)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-9-30' ,3)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-9-30' ,5)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-9-30' ,9)";
+
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-1' ,9)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-1' ,3)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-1' ,4)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-1' ,1)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-1' ,2)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-1' ,5)";
+
+ 
+
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-3',9)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-3' ,1)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-3' ,2)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-3' ,3)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-3' ,4)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-3' ,5)";
+
+
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-4',6)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-4' ,7)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-4' ,8)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-4' ,3)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-4' ,5)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-4' ,9)";
+
+
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-5',9)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-5' ,3)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-5' ,4)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-5' ,1)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-5' ,2)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-5' ,5)";
+
+
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-6',6)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-6' ,7)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-6' ,8)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-6' ,3)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-6' ,5)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-6' ,9)";
+
+
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-7',9)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-7' ,1)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (1,'2015-10-7' ,2)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-7' ,3)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-7' ,4)";
+ sql= "insert into vendorselection (vendorid, date ,menuid ) values (2,'2015-10-7' ,5)";
+
+
+
+
+
+
+
+
+ sql= "insert into users ( username, password, role) values ( 'James', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Jyothi', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Jeeva', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Kavitha', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Joe', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Vicky', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'John', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Clament', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Jayanthi', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Krishna', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Juvi', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Ilaqya', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Balaji', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Sanjay', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Meena', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Poorni', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Dharani', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Preethi', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Suvi', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Lakshmi', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Sekhar', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Chandra', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Harika', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Sumathi', '123','emp')";
+ sql= "insert into users ( username, password, role) values ( 'Admin', 'admin','adm')";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+delete from vendorselection where 1=1;
+delete from empselection where 1=1;
+delete from menu where 1=1;
+delete from vendor where 1=1;
+delete from users;
+drop table vendorselection;
+drop table empselection;
+drop table menu;
+drop table vendor;
+drop table users;
+commit;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

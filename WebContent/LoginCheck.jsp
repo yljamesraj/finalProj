@@ -16,10 +16,22 @@
 		pwd = request.getParameter("pwd");
 		UserDetailDAO userDao = new UserDetailDAO();
 		UserDtlsBean user = new UserDtlsBean();
+		
+		if(vzid.equals("Insert"))
+		{
+			 UserDetailDAO useBean = new UserDetailDAO();
+			 if(useBean.insertSQLs()) { 
+				 System.out.println("successfully inserted");
+	
+			 }
+		}
+		
 		user = userDao.getUserDetails(vzid, pwd);
 		if (user != null) {
 			System.out.println("pwd"+pwd);
 			System.out.println("dbpwd "+user.getPassword());
+			
+			
 			if (!(pwd.equals(user.getPassword()))) {
 				System.out.println("Incorrect password");
 				request.getRequestDispatcher(
@@ -38,6 +50,9 @@
 				System.out.println("------------------------------------USERID"+userId);
 				session.setAttribute("vzId", VzId);
 				session.setAttribute("role", user.getRole());
+				
+
+				
 				if(user.getRole().equals("emp"))
 				request.getRequestDispatcher("UserSelection.jsp").forward(
 						request, response);

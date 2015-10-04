@@ -39,24 +39,19 @@ Query OK, 1 row affected (0.01 sec)
 
 mysql> USE letustry;
 Database changed
-mysql> CREATE TABLE users (userid INT NOT NULL AUTO_INCREMENT, username VARCHAR(20) NOT NULL, password VARCHAR(20) NOT N
-ULL, role VARCHAR(20), primary key(userid));
+mysql> CREATE TABLE users (userid INT NOT NULL AUTO_INCREMENT, username VARCHAR(20) NOT NULL, password VARCHAR(20) NOT NULL, role VARCHAR(20), primary key(userid));
 Query OK, 0 rows affected (0.03 sec)
 
-mysql> CREATE TABLE vendor(vendorid INT NOT NULL AUTO_INCREMENT, vendorname VARCHAR(50) NOT NULL, contactno VARCHAR(20)
-NOT NULL, location VARCHAR(20), primary key(vendorid));
+mysql> CREATE TABLE vendor(vendorid INT NOT NULL AUTO_INCREMENT, vendorname VARCHAR(50) NOT NULL, contactno VARCHAR(20) NOT NULL, location VARCHAR(20), primary key(vendorid));
 Query OK, 0 rows affected (0.05 sec)
 
-mysql>  CREATE TABLE menu(menuid INT NOT NULL AUTO_INCREMENT, itemname VARCHAR(50) NOT NULL, description VARCHAR(100), s
-tatus VARCHAR(10), start_date DATE,end_date DATE,primary key(menuid));
+mysql>  CREATE TABLE menu(menuid INT NOT NULL AUTO_INCREMENT, itemname VARCHAR(50) NOT NULL, description VARCHAR(100), status VARCHAR(10), start_date DATE,end_date DATE,primary key(menuid));
 Query OK, 0 rows affected (0.03 sec)
 
-mysql>  CREATE TABLE vendorselection(vendorid INT, date DATE,menuid INT,  FOREIGN KEY (vendorid)  REFERENCES vendor(vend
-orid),FOREIGN KEY (menuid)  REFERENCES menu(menuid));
+mysql>  CREATE TABLE vendorselection(vendorid INT, date DATE,menuid INT,  FOREIGN KEY (vendorid)  REFERENCES vendor(vendorid),FOREIGN KEY (menuid)  REFERENCES menu(menuid));
 Query OK, 0 rows affected (0.03 sec)
 
-mysql> CREATE TABLE empselection(empid VARCHAR(20), date DATE,menuid INT,  rating INT, comments VARCHAR(200), FOREIGN KE
-Y (menuid)  REFERENCES menu(menuid));
+mysql> CREATE TABLE empselection(empid VARCHAR(20), date DATE,menuid INT,  rating INT, comments VARCHAR(200), FOREIGN KEY (menuid)  REFERENCES menu(menuid));
 Query OK, 0 rows affected (0.06 sec)
 
 mysql>  insert into users ( username, password, role) values ( 'James', 'verizon1','emp');

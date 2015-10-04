@@ -39,7 +39,7 @@ public class UserSelectionDAO {
 			String currDate = new SimpleDateFormat("yyyy-MM-dd")
 					.format(new Date());
 			stmt = conn
-					.prepareStatement("INSERT INTO empselection(empid,date ,menuid,rating ,comments ) values (?,? ,?,?,?)");
+					.prepareStatement("INSERT INTO letustry.empselection(empid,date ,menuid,rating ,comments ) values (?,? ,?,?,?)");
 			stmt.setInt(1, userId);
 			stmt.setString(2, currDate);
 			stmt.setInt(3, menuId);
