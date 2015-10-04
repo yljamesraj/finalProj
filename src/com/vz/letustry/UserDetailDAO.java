@@ -11,11 +11,16 @@ import java.sql.Statement;
 public class UserDetailDAO {
 	// JDBC driver name and database URL
 	   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-	   static final String DB_URL = "jdbc:mysql://localhost";
+	   //static final String DB_URL = "jdbc:mysql://localhost";
+	   static final String DB_URL = "jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/ad_e0a63817d8663c4";
 
 	   //  Database credentials
-	   static final String USER = "root";
-	   static final String PASS = "password";
+	  // static final String USER = "root";
+	   static final String USER = "ba55310962c331";
+	   
+	   //static final String PASS = "password";
+	   static final String PASS = "217e6372";
+	   
 	public static UserDtlsBean getUserDetails(String username, String passwd) {  
 		   Connection conn = null;
 		   Statement stmt = null;
@@ -32,7 +37,7 @@ public class UserDetailDAO {
 		      System.out.println("Creating statement...password is +" + PASS);
 		      stmt = conn.createStatement();
 		      String sql;
-		      sql = "SELECT * FROM letustry.users where username='";
+		      sql = "SELECT * FROM users where username='";
 		      sql += username + "'" ;
 		      ResultSet rs = stmt.executeQuery(sql);
 		      
@@ -99,11 +104,7 @@ public class UserDetailDAO {
 		      stmt = conn.createStatement();
 		         
 		      
-		      String sql = "CREATE DATABASE letustry";
-		      stmt.addBatch(sql);
-		       sql= "USE letustry";
-		       stmt.addBatch(sql);
-		       sql = "CREATE TABLE users (userid INT NOT NULL AUTO_INCREMENT, username VARCHAR(20) NOT NULL, password VARCHAR(20) NOT NULL, role VARCHAR(20), primary key(userid))";
+		      String   sql = "CREATE TABLE users (userid INT NOT NULL AUTO_INCREMENT, username VARCHAR(20) NOT NULL, password VARCHAR(20) NOT NULL, role VARCHAR(20), primary key(userid))";
 		       stmt.addBatch(sql);
 		       sql = "CREATE TABLE vendor(vendorid INT NOT NULL AUTO_INCREMENT, vendorname VARCHAR(50) NOT NULL, contactno VARCHAR(20) NOT NULL, location VARCHAR(20), primary key(vendorid))";
 		       stmt.addBatch(sql);

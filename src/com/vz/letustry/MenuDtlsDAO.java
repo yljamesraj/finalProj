@@ -10,12 +10,21 @@ import java.util.List;
 
 public class MenuDtlsDAO {
 	// JDBC driver name and database URL
+   
+	   
 	   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-	   static final String DB_URL = "jdbc:mysql://localhost/letustry";
+	   //static final String DB_URL = "jdbc:mysql://localhost";
+	   static final String DB_URL = "jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/ad_e0a63817d8663c4";
 
 	   //  Database credentials
-	   static final String USER = "root";
+	  // static final String USER = "root";
+	   static final String USER = "ba55310962c331";
+	   
 	   //static final String PASS = "password";
+	   static final String PASS = "217e6372";
+	   
+	   
+	   
 	public  List getAllMenuDetails() {  
 		   Connection conn = null;
 		   Statement stmt = null;
@@ -28,7 +37,7 @@ public class MenuDtlsDAO {
 		      //STEP 3: Open a connection
 		      System.out.println("Connecting to database...");
 		      //conn = DriverManager.getConnection(DB_URL,USER,PASS);
-		      conn = DriverManager.getConnection(DB_URL,USER,"");
+		      conn = DriverManager.getConnection(DB_URL,USER,PASS);
 		      //STEP 4: Execute a query
 		      System.out.println("Creating statement...");
 		      stmt = conn.createStatement();
