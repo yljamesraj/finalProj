@@ -1,5 +1,4 @@
 language: java
-install: ant deps
 deploy:
   edge: true
   provider: cloudfoundry  
