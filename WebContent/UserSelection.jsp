@@ -9,7 +9,7 @@
 	VendorSelectionDAO obj = new VendorSelectionDAO();
 	String currDate = new SimpleDateFormat("yyyy-MM-dd")
 			.format(new Date());
-	List vs1 = obj.getVendorMenuDetails(currDate, 1);
+	List vs1 = obj.getVendorMenuDetails(currDate, 12);
 	List vs2 = obj.getVendorMenuDetails(currDate, 2);
 
 	String radio1 = "";
