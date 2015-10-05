@@ -36,15 +36,12 @@
 		boolean isAdded = vendorDao.addVendorSelectionDetails(userID, date1, itemsSelected);
 		if (isAdded) {
 			System.out.println("SUCCESS");
-			response.sendRedirect("Success.jsp");
-			request.getRequestDispatcher("Success.jsp")
-			.forward(request, response);
+			request.getRequestDispatcher("Success.jsp").forward(request, response);
 			//
 
 		} else {
 			System.out.println("FAILED");
-			request.getRequestDispatcher("Failure.jsp")
-					.forward(request, response);
+			request.getRequestDispatcher("Failure.jsp").forward(request, response);
 			//
 		}
 	%>
