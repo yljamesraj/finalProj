@@ -1,7 +1,5 @@
 package com.vz.letustry;
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -28,7 +26,7 @@ public class UserDetailDAO {
 		   try{
 		      //STEP 2: Register JDBC driver
 		      Class.forName("com.mysql.jdbc.Driver");
-
+		      System.out.println("Connecting to database...");
 		      //STEP 3: Open a connection
 		      System.out.println("Connecting to database...");
 		      //conn = DriverManager.getConnection(DB_URL,USER,PASS);
