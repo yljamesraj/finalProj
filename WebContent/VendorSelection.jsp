@@ -131,7 +131,7 @@
 						
 						<br>
 						<b>Select Vendor</b><br><br>
-						<font size="3px"></font><input type="Radio" name="Vendor" value="1"
+						<font size="3px"></font><input type="Radio" name="Vendor" value="12"
 							class="easyui-validatebox" required="true"> Vendor 1 <input
 							type="Radio" name="Vendor" value="2"
 							class="easyui-validatebox" required="true"> Vendor 2 </font>

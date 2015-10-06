@@ -78,7 +78,7 @@
 					System.out.println("date " + date1);
 
 					HashMap<String, Integer> countList1 = new HashMap<String, Integer>();
-					countList1 = obj.getCount(date1, 1);
+					countList1 = obj.getCount(date1, 12);
 					HashMap<String, Integer> countList2 = new HashMap<String, Integer>();
 					countList2 = obj.getCount(date1, 2);
 
