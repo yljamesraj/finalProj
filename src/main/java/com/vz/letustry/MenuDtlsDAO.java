@@ -10,6 +10,7 @@ import java.util.List;
 
 public class MenuDtlsDAO {
 	// JDBC driver name and database URL
+	
    
 	   
 	   static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
